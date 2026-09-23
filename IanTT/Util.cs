@@ -9,6 +9,7 @@ using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Selection;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.ApplicationServices;
+using Autodesk.Revit.DB.Structure;
 
 namespace IanTT
 {
@@ -49,7 +50,7 @@ namespace IanTT
 
             foreach (FamilySymbol item in collector)
             {
-                if(name == item.Name)
+                if (name == item.Name)
                 {
                     fs = item;
                     break;
@@ -58,6 +59,39 @@ namespace IanTT
             return fs;
         }
 
+        /// <summary>
+        /// XYZ 좌표 리스트를 받아서 Curve 리스트로 반환하는 함수
+        /// </summary>
+        /// <param name="points"></param>
+        /// <returns></returns>
+        public static List<Curve> GetCurveListFromPts(List<XYZ> points)
+        {
+            List<Curve> curves = new List<Curve>();
 
+            for (int i = 0; i < points.Count - 1; i++)
+            {
+                Line line = Line.CreateBound(points[i], points[i + 1]);
+                curves.Add(line);
+            }
+
+            return curves;
+        }
+
+
+        public static void CreateFamilyInstanceFromCurve
+            (List<Curve> c, FamilySymbol fs, Level level, Document doc)
+        {
+            foreach (Curve item in c)
+            {
+                using(Transaction trans = new Transaction(doc, "Create Beam"))
+                {
+                    trans.Start();
+                    fs.Activate();
+                    FamilyInstance fi = doc.Create.NewFamilyInstance
+                        (item, fs, level, StructuralType.Beam);
+                    trans.Commit();
+                }
+            }
+        }
     }
 }

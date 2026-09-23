@@ -11,3 +11,4 @@ C:\Users\platu\OneDrive\Desktop\IanTT\IanTT\obj\Debug\net8.0-windows\refint\IanT
 C:\Users\platu\OneDrive\Desktop\IanTT\IanTT\obj\Debug\net8.0-windows\IanTT.pdb
 C:\Users\platu\OneDrive\Desktop\IanTT\IanTT\obj\Debug\net8.0-windows\ref\IanTT.dll
 C:\Users\platu\OneDrive\Desktop\IanTT\IanTT\obj\Debug\net8.0-windows\IanTT.csproj.Up2Date
+C:\Users\platu\OneDrive\Desktop\IanTT\IanTT\obj\Debug\net8.0-windows\IanTT.sourcelink.json
