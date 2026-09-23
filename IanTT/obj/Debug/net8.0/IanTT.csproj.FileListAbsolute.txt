@@ -1,0 +1,13 @@
+C:\Users\platu\OneDrive\Desktop\IanTT\IanTT\bin\Debug\net8.0\IanTT.deps.json
+C:\Users\platu\OneDrive\Desktop\IanTT\IanTT\bin\Debug\net8.0\IanTT.dll
+C:\Users\platu\OneDrive\Desktop\IanTT\IanTT\bin\Debug\net8.0\IanTT.pdb
+C:\Users\platu\OneDrive\Desktop\IanTT\IanTT\obj\Debug\net8.0\IanTT.csproj.AssemblyReference.cache
+C:\Users\platu\OneDrive\Desktop\IanTT\IanTT\obj\Debug\net8.0\IanTT.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\platu\OneDrive\Desktop\IanTT\IanTT\obj\Debug\net8.0\IanTT.AssemblyInfoInputs.cache
+C:\Users\platu\OneDrive\Desktop\IanTT\IanTT\obj\Debug\net8.0\IanTT.AssemblyInfo.cs
+C:\Users\platu\OneDrive\Desktop\IanTT\IanTT\obj\Debug\net8.0\IanTT.csproj.CoreCompileInputs.cache
+C:\Users\platu\OneDrive\Desktop\IanTT\IanTT\obj\Debug\net8.0\IanTT.dll
+C:\Users\platu\OneDrive\Desktop\IanTT\IanTT\obj\Debug\net8.0\refint\IanTT.dll
+C:\Users\platu\OneDrive\Desktop\IanTT\IanTT\obj\Debug\net8.0\IanTT.pdb
+C:\Users\platu\OneDrive\Desktop\IanTT\IanTT\obj\Debug\net8.0\ref\IanTT.dll
+C:\Users\platu\OneDrive\Desktop\IanTT\IanTT\obj\Debug\net8.0\IanTT.csproj.Up2Date
