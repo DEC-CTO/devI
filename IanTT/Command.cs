@@ -21,6 +21,7 @@ namespace IanTT
             UIDocument uiDoc = uiApp.ActiveUIDocument;
             Document doc = uiDoc.Document;
 
+            //깃연습입니다. 연습중......
             //Reference r = uiDoc.Selection.PickObject
             //    (ObjectType.Element, "객체를 선택하세요");
             //Element e = doc.GetElement(r);
