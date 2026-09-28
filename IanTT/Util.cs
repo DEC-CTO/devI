@@ -93,5 +93,67 @@ namespace IanTT
                 }
             }
         }
+
+        /// <summary>
+        /// XYZ 좌표 리스트를 받아서 CurveLoop로 반환하는 함수
+        /// </summary>
+        /// <param name="points"></param>
+        /// <returns></returns>
+
+        public static CurveLoop GetCurveLoopFormPts(List<XYZ> points)
+        {
+            CurveLoop cl = new CurveLoop();
+
+            for(int i = 0; i < points.Count; i++)
+            {
+                if(i < points.Count - 1)
+                {
+                    Line line = Line.CreateBound(points[i], points[i + 1]);
+                    cl.Append(line);
+                }
+                else if(i == points.Count - 1)
+                {
+                    Line line = Line.CreateBound(points[i], points[0]);
+                    cl.Append(line);
+                }                        
+            }
+            return cl;
+        }
+
+        public static void CreateFloor
+            (Document doc, IList<CurveLoop> cl, ElementId floorid, ElementId levelid, double tt)
+        {
+            using(Transaction trans = new Transaction(doc, "바닥을 생성합니다."))
+            {
+                trans.Start();
+                Floor f = Floor.Create(doc, cl, floorid, levelid);
+                Parameter param = f.get_Parameter(BuiltInParameter.FLOOR_HEIGHTABOVELEVEL_PARAM);
+                if (param == null)
+                {
+                    Autodesk.Revit.UI.TaskDialog.Show("경고", "값이 없어?");
+                }
+                param.Set(tt);
+                trans.Commit();
+            }
+        }
+
+        public static FloorType FindFloorTypeByName(Document doc, string name)
+        {
+            FloorType ft = null;
+            FilteredElementCollector col = new FilteredElementCollector(doc);
+            col.OfCategory(BuiltInCategory.OST_Floors);
+            col.OfClass(typeof(FloorType));
+
+            foreach (FloorType item in col)
+            {
+                if(name == item.Name)
+                {
+                    ft = item;
+                    break;
+                }
+            }
+
+            return ft;
+        }
     }
 }
